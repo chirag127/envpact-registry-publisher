@@ -26,7 +26,11 @@ export class AwesomeMcpAdapter implements Adapter {
     }
     const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'envpact-amcp-'));
     try {
-      await this.gh(['repo', 'fork', UPSTREAM, '--clone=true', '--remote=false'], tmpDir);
+      // `gh repo fork <upstream> --clone` clones the fork into the
+      // current directory. The --remote flag is a boolean (no
+      // =false form) and is mutually exclusive with passing a repo
+      // argument, so we just don't pass it.
+      await this.gh(['repo', 'fork', UPSTREAM, '--clone'], tmpDir);
       const cloneDir = path.join(tmpDir, 'awesome-mcp-servers');
       const branch = `add-${spec.npm_package.replace(/[^a-z0-9-]/g, '-')}-${spec.version}`;
 

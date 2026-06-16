@@ -1,6 +1,6 @@
 {
   "name": "envpact-registry-publisher",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Programmatic submission of MCP servers to every public registry (Smithery, official, glama, mcp.so, awesome-mcp-servers).",
   "type": "module",
   "bin": {
