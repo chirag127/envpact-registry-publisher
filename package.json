@@ -1,0 +1,46 @@
+{
+  "name": "envpact-registry-publisher",
+  "version": "0.1.0",
+  "description": "Programmatic submission of MCP servers to every public registry (Smithery, official, glama, mcp.so, awesome-mcp-servers).",
+  "type": "module",
+  "bin": {
+    "envpact-registry-publish": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "action.yml",
+    "server.json.example"
+  ],
+  "scripts": {
+    "build": "tsc -p ./",
+    "test": "node --test --import tsx tests/*.test.ts",
+    "lint": "tsc --noEmit -p ./"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "registry",
+    "publisher",
+    "smithery"
+  ],
+  "author": "Chirag Singhal <whyiswhen@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://envpact.oriz.in",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chirag127/envpact-registry-publisher.git"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "optionalDependencies": {
+    "playwright": "^1.61.0"
+  }
+}

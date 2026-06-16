@@ -1,0 +1,20 @@
+name: 'envpact registry publish'
+description: 'Submit an MCP server to every public registry on every npm publish.'
+inputs:
+  server-json:
+    description: 'Path to server.json'
+    required: false
+    default: './server.json'
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: Install Playwright (optional, for UI fallbacks)
+      shell: bash
+      run: npx playwright install --with-deps chromium || true
+    - name: Run envpact-registry-publish
+      shell: bash
+      run: npx -y envpact-registry-publisher "${{ inputs.server-json }}"
