@@ -95,3 +95,8 @@ Tokens are read at run-time only; never committed.
 ## License
 
 MIT.
+
+## Documentation
+
+- **[Repo docs (`docs/README.md`)](./docs/README.md)** — full reference for envpact-registry-publisher
+- **[Project umbrella site](https://chirag127.github.io/envpact/)** — overview of all envpact components
